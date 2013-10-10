@@ -1,7 +1,7 @@
 Em.onLoad 'Ember.Application', (application) ->
   application.initializer
     name: 'ember-auth.module.url-authenticatable'
-    after: 'ember-auth'
+    before: 'ember-auth-load'
 
     initialize: (container, app) ->
       app.register 'authModule:urlAuthenticatable', \
