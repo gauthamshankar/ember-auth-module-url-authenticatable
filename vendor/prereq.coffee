@@ -1,6 +1,6 @@
 #= require jquery
 #= require handlebars
-#= require ember
+#= require ember-latest
 #= require ember-auth
 #= require ember-auth-request-dummy
 #= require ember-auth-response-dummy
