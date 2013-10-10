@@ -1,5 +1,7 @@
 # url authenticatable module for ember-auth
 
+[![Build Status](https://secure.travis-ci.org/heartsentwined/ember-auth-module-url-authenticatable.png)](http://travis-ci.org/heartsentwined/ember-auth-module-url-authenticatable)
+
 Allows auto sign in from entry points like `/foo?token=abcd1234`.
 
 ## Config
