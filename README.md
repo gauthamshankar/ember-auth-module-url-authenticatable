@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/heartsentwined/ember-auth-module-url-authenticatable.png)](http://travis-ci.org/heartsentwined/ember-auth-module-url-authenticatable)
 [![Gem Version](https://badge.fury.io/rb/ember-auth-module-url_authenticatable-source.png)](http://badge.fury.io/rb/ember-auth-module-url_authenticatable-source)
-[![NPM version](https://badge.fury.io/js/ember-auth.png)](http://badge.fury.io/js/ember-auth-module-url-authenticatable)
+[![NPM version](https://badge.fury.io/js/ember-auth-module-url-authenticatable.png)](http://badge.fury.io/js/ember-auth-module-url-authenticatable)
 
 Allows auto sign in from entry points like `/foo?token=abcd1234`.
 
