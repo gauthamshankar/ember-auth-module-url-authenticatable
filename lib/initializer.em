@@ -6,3 +6,4 @@ Em.onLoad 'Ember.Application', (application) ->
     initialize: (container, app) ->
       app.register 'authModule:urlAuthenticatable', \
       Em.Auth.UrlAuthenticatableAuthModule
+      app.inject 'authModule:urlAuthenticatable', 'auth', 'auth:main'
