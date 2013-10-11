@@ -1,8 +1,18 @@
 $ = jQuery
 class Em.Auth.UrlAuthenticatableAuthModule
   init: ->
-    @config? || (@config = @auth.urlAuthenticatable)
+    @auth._config 'urlAuthenticatable', @_defaultConfig
+    @config? || (@config = @auth._config 'urlAuthenticatable')
     @patch()
+
+  _defaultConfig:
+    # [array<string>] list of params used for authentication - those that
+    #   should be passed on to the server in the sign in call
+    params: []
+
+    # [string|null] (opt) a different end point for sign in requests
+    #   from urlAuthenticatable
+    endPoint: null
 
   # try to authenticate user from query params
   #
