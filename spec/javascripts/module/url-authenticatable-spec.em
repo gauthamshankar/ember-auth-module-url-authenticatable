@@ -34,17 +34,17 @@ describe 'Em.Auth.UrlAuthenticatableAuthModule', ->
           expect(spy).not.toHaveBeenCalled()
 
       describe 'params not empty', ->
-        beforeEach -> Em.run -> auth.urlAuthenticatable.params = ['foo']
+        beforeEach -> Em.run -> urlAuth.config.params = ['foo']
 
         afterEach ->
           Em.run ->
-            auth.urlAuthenticatable.params   = []
-            auth.urlAuthenticatable.endPoint = null
+            urlAuth.config.params   = []
+            urlAuth.config.endPoint = null
 
         describe 'opts not given', ->
 
           describe 'endPoint set', ->
-            beforeEach -> Em.run -> auth.urlAuthenticatable.endPoint = 'bar'
+            beforeEach -> Em.run -> urlAuth.config.endPoint = 'bar'
 
             it 'delegates to auth.signIn with params as data', ->
               Em.run -> urlAuth.authenticate { foo: 'bar' }
