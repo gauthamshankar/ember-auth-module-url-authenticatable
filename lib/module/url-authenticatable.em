@@ -48,10 +48,6 @@ class Em.Auth.UrlAuthenticatableAuthModule
     self = this
     Em.Route.reopen
       beforeModel: (queryParams, transition) ->
-        ret = super.apply this, arguments
-        return ret unless transition?
-
-        if typeof ret.then == 'function'
-          ret.then -> self.authenticate queryParams
-        else
+        self.auth._ensurePromise(super.apply this, arguments).then ->
+          return unless transition?
           self.authenticate queryParams
