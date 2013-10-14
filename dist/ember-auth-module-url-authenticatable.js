@@ -61,17 +61,11 @@ void function () {
       self = this;
       return get$(Em, 'Route').reopen({
         beforeModel: function (queryParams, transition) {
-          var ret;
-          ret = this._super.apply(this, arguments);
-          if (!(null != transition))
-            return ret;
-          if (typeof get$(ret, 'then') === 'function') {
-            return ret.then(function () {
-              return self.authenticate(queryParams);
-            });
-          } else {
+          return get$(self, 'auth')._ensurePromise(this._super.apply(this, arguments)).then(function () {
+            if (!(null != transition))
+              return;
             return self.authenticate(queryParams);
-          }
+          });
         }
       });
     }
